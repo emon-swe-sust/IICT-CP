@@ -1,9 +1,1 @@
-visiting node 0 
-visiting node 1 
-visiting node 2 
-visiting node 3 
-visiting node 4 
-visiting node 5 
-visiting node 7 
-visiting node 8 
-visiting node 6 
+4 -> 3 -> 2 -> 1 -> 4 -> 0 -> 1 -> 3
