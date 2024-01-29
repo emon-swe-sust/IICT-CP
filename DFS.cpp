@@ -24,7 +24,7 @@ int main()
     //                            {0, 0, 1, 0, 0}};
 
                                             //  0  1  2  3  4  5  6  7  8
-    int graph[numberOfNodes][numberOfNodes] = {{0, 1, 1, 1, 0, 0, 0, 0, }0,
+    int graph[numberOfNodes][numberOfNodes] = {{0, 1, 1, 1, 0, 0, 0, 0, 0},
                                                {1, 0, 0, 0, 1, 1, 0, 0, 0},
                                                {1, 0, 0, 0, 0, 0, 0, 0, 0},
                                                {1, 0, 0, 0, 0, 0, 0, 1, 1},
@@ -47,7 +47,7 @@ int main()
             if((graph[current][i] == 1) && (visited[i] == 0))
             {
                 st.push(i);
-                                visited[i] = 1;
+                visited[i] = 1;
 
             }
         }
