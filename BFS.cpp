@@ -9,7 +9,7 @@ void initial() {
 }
 
 queue<int> qu; 
-int visited[6] = {0};
+int visited[9] = {0};
 
 int main()
 {
