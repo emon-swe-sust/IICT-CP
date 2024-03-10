@@ -16,7 +16,6 @@ void dfs(int n){
     for(int i= 0; i<len; i++){
         dfs(graph[n][i]);
     }
-    cout << n << " ";
     st.push(n);
 }
 
