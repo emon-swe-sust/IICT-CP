@@ -1,4 +1,5 @@
 // https://www.hackerearth.com/practice/notes/mos-algorithm/
+// https://www.youtube.com/watch?v=RENzmNgIZ4A
 
 #include <bits/stdc++.h>
 using namespace std;
