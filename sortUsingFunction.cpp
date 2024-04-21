@@ -5,7 +5,6 @@ bool compareIntegers(int a, int b) {
 }
 
 int main() {
-    initial();
     std::vector<int> numbers = {5, 2, 8, 3, 1};
 
     std::sort(numbers.begin(), numbers.end(), compareIntegers);
