@@ -21,4 +21,5 @@ int main() {
   for(int i=0;i<=n;i++){
     if(lp[i] == 0)
       cout << i << " " ;
+  }
 }
