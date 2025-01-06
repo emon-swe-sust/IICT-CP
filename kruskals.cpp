@@ -1,13 +1,13 @@
-#include<bits/stdc++.h>
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#include <string>
+#include <map>
+#include <set>
+#include <cmath>
+#include <functional>
+#include <ctime> 
 using namespace std;
-
-void initial() {
-    #ifndef LEETCODE
-        freopen("input.txt", "r", stdin);
-        freopen("output.txt", "w", stdout);
-    #endif
-}
-
 struct Edge {
     int u, v, w;
 };
@@ -22,7 +22,6 @@ bool edgeComp (Edge a, Edge b) {
 }
 
 void kruskals() {
-
     int cost = 0;
     for (int i = 0; i < n; i++)
         tree_id[i] = i;
@@ -48,7 +47,6 @@ void kruskals() {
 }
 
 int main() {
-    initial();
     int u, v, w;
     for(int i=0; i<numberOfEdges; i++) {
         cin >> u >> v >> w;

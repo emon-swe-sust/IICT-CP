@@ -72,4 +72,8 @@ int main() {
 	}
 }
 
+<<<<<<< HEAD
 // https://codeforces.com/edu/course/2/lesson/2
+=======
+// https://codeforces.com/edu/course/2/lesson/2
+>>>>>>> 48ca8eda14c2910ed0f292c25912f8983facaf00
