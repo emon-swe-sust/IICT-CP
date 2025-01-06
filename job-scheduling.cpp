@@ -49,15 +49,7 @@ void printJobScheduling(Job arr[], int n)
         }
         cout << "Sloat Available " << slot_available << endl;
 
-        if (arr[i].dead == arr[i - 1].dead)
-        {
-            if (arr[i].profit > arr[i - 1].profit)
-                pq.push(arr[i]);
-        }
-        else
-        {
-            pq.push(arr[i]);
-        }
+        pq.push(arr[i]);
 
         while (slot_available > 0 && pq.size() > 0)
         {
@@ -79,7 +71,7 @@ void printJobScheduling(Job arr[], int n)
 
 int main()
 {
-    Job arr[] = {{'a', 2, 100}, {'b', 1, 19}, {'c', 2, 27}, {'d', 1, 25}, {'e', 5, 15}};
+    Job arr[] = {{'a', 2, 100}, {'b', 1, 19}, {'c', 2, 27}, {'d', 1, 25}, {'e', 7, 20}, {'f', 7, 15}, {'g', 7, 5}};
 
     int n = sizeof(arr) / sizeof(arr[0]);
 
