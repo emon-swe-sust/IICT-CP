@@ -1,9 +1,8 @@
-// https://cp-algorithms.com/graph/mst_prim.html
-
+// https://cp-algorithms.com/graph/mst_prim.htm
 #include<bits/stdc++.h>
 using namespace std;
 
-int n = 9;
+int n = 6;
 vector<vector<int>> adj;
 int INF = 1000000000;
 
@@ -32,6 +31,7 @@ void prim() {
 
         visited[v] = true;
         total_weight += min_e[v].w;
+
         if (min_e[v].to != -1)
             cout << v << " " << min_e[v].to << endl;
 
@@ -51,34 +51,24 @@ void prim() {
 int main() {
     adj.resize(n, vector<int>(n, INF));
 
-    adj[0][1] = 4;
-    adj[0][7] = 8;
-    adj[1][0] = 4;
-    adj[1][2] = 8;
-    adj[1][7] = 11;
-    adj[2][1] = 8;
-    adj[2][3] = 7;
-    adj[2][5] = 4;
-    adj[2][8] = 2;
-    adj[3][2] = 7;
+    adj[0][1] = 2;
+    adj[0][3] = 1;
+    adj[0][4] = 4;
+    adj[1][0] = 2;
+    adj[1][3] = 3;
+    adj[1][2] = 3;
+    adj[1][5] = 7;
+    adj[2][1] = 3;
+    adj[2][5] = 8;
+    adj[2][3] = 5;
     adj[3][4] = 9;
-    adj[3][5] = 14;
+    adj[3][0] = 1;
+    adj[3][1] = 3;
+    adj[3][2] = 5;
+    adj[4][0] = 4;
     adj[4][3] = 9;
-    adj[4][5] = 10;
-    adj[5][2] = 4;
-    adj[5][3] = 14;
-    adj[5][4] = 10;
-    adj[5][6] = 2;
-    adj[6][5] = 2;
-    adj[6][7] = 1;
-    adj[6][8] = 6;
-    adj[7][0] = 8;
-    adj[7][1] = 11;
-    adj[7][6] = 1;
-    adj[7][8] = 7;
-    adj[8][2] = 2;
-    adj[8][6] = 6;
-    adj[8][7] = 7;
+    adj[5][1] = 7;
+    adj[5][2] = 8;
 
     prim();
 }
