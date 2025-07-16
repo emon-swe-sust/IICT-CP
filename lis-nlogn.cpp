@@ -3,7 +3,6 @@ using namespace std;
 
 int lengthOfLIS(vector<int>& arr)
 {
-
     int n = arr.size();
     vector<int> ans;
 
