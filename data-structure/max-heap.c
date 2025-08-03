@@ -1,46 +1,87 @@
 #include <stdio.h>
 
+int size = 0;
+
 void swap(int *a, int *b) {
     int temp = *a;
     *a = *b;
     *b = temp;
 }
 
-void maxHeapify(int arr[], int n, int i) {
+void heapify(int array[], int size, int i) {
     int largest = i;
-    int left = 2 * i + 1;
-    int right = 2 * i + 2;
+    int l = 2 * i + 1;
+    int r = 2 * i + 2;
 
-    if (left < n && arr[left] > arr[largest])
-        largest = left;
-
-    if (right < n && arr[right] > arr[largest])
-        largest = right;
+    if (l < size && array[l] > array[largest])
+        largest = l;
+    if (r < size && array[r] > array[largest])
+        largest = r;
 
     if (largest != i) {
-        swap(&arr[i], &arr[largest]);
-        maxHeapify(arr, n, largest);
+        swap(&array[i], &array[largest]);
+        heapify(array, size, largest);
     }
 }
 
-void buildMaxHeap(int arr[], int n) {
-    for (int i = n / 2 - 1; i >= 0; i--)
-        maxHeapify(arr, n, i);
+void buildHeap(int array[]) {
+    for (int i = size / 2 - 1; i >= 0; i--)
+        heapify(array, size, i);
 }
 
-void printArray(int arr[], int n) {
-    for (int i = 0; i < n; i++)
-        printf("%d ", arr[i]);
+void insert(int array[], int newNum) {
+    array[size] = newNum;
+    size += 1;
+
+    int current = size - 1;
+    while (current > 0) {
+        int parent = (current - 1) / 2;
+        if (array[current] > array[parent]) {
+            swap(&array[current], &array[parent]);
+            current = parent;
+        } else {
+            break;
+        }
+    }
+}
+
+void deleteRoot(int array[], int num) {
+    int i;
+    for (i = 0; i < size; i++) {
+        if (array[i] == num) break;
+    }
+
+    if (i == size) return;
+
+    swap(&array[i], &array[size - 1]);
+    size--;
+
+    buildHeap(array);
+}
+
+void printArray(int array[], int size) {
+    for (int i = 0; i < size; ++i)
+        printf("%d ", array[i]);
     printf("\n");
 }
 
 int main() {
-    int arr[] = {10, 20, 15, 30, 40};
-    int n = sizeof(arr) / sizeof(arr[0]);
+    int array[20] = {3, 9, 2, 1, 4, 5};
+    size = 6;
 
-    buildMaxHeap(arr, n);
-    printf("Max-Heap: ");
-    printArray(arr, n);
+    buildHeap(array);
+    printf("Max-Heap array: ");
+    printArray(array, size);
+
+    insert(array, 7);
+    insert(array, 8);
+
+    printf("After insertion: ");
+    printArray(array, size);
+
+    deleteRoot(array, 4);
+    printf("After deleting 4: ");
+    printArray(array, size);
 
     return 0;
 }
