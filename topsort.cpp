@@ -1,13 +1,13 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-void dfs(int v, vector<bool> &visited, vector<int> &ans, vector<vector<int>> adj) {
-    visited[v] = true;
-    for (int u : adj[v]) {
-        if (!visited[u])
-            dfs(u, visited, ans, adj);
+void dfs(int u, vector<bool> &visited, vector<int> &ans, vector<vector<int>> adj) {
+    visited[u] = true;
+    for (int v : adj[u]) {
+        if (!visited[v])
+            dfs(v, visited, ans, adj);
     }
-    ans.push_back(v);
+    ans.push_back(u);
 }
 
 void topological_sort(int n, vector<bool> &visited, vector<int> &ans, vector<vector<int>> adj) {
